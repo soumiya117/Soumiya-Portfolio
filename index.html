@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soumiya M. | Creative Tech Portfolio</title>
-    <!-- Tailwind CSS -->
-    <script src="https://tailwindcss.com"></script>
-    <!-- Google Fonts (Playful Display & Clean Sans) -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
+    
+    <!-- THE REAL WORKING TAILWIND ENGINE CODE (DO NOT TWEAK THIS URL) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GOOGLE FONTS CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- FONTAWESOME CDN -->
     <link rel="stylesheet" href="https://cloudflare.com">
     
     <script>
@@ -25,7 +28,7 @@
             }
         }
         
-        // Interactive Tab Filter Logic
+        // Tab Filter Action
         function filterProjects(category, buttonElement) {
             const items = document.querySelectorAll('.project-card');
             const buttons = document.querySelectorAll('.tab-btn');
@@ -51,14 +54,14 @@
         }
     </script>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FDF7F5; color: #4A3728; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FFF5F3; color: #4A3728; }
         .font-display { font-family: 'Fredoka', sans-serif; }
     </style>
 </head>
 <body class="antialiased selection:bg-[#F5E6E3] selection:text-[#C87A65]">
 
     <!-- Header Navigation -->
-    <header class="border-b-2 border-[#F5E6E3] sticky top-0 bg-[#FDF7F5]/90 backdrop-blur-md z-50">
+    <header class="border-b-2 border-[#F5E6E3] sticky top-0 bg-[#FFF5F3]/90 backdrop-blur-md z-50">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="font-display font-bold text-2xl tracking-tight text-[#C87A65]">soumiya<span class="text-[#8A9A86]">.fun</span></a>
             <nav class="flex space-x-6 text-sm font-bold text-[#4A3728]">
@@ -69,7 +72,7 @@
         </div>
     </header>
 
-    <!-- Hero / Intro Section -->
+    <!-- Hero Section -->
     <section id="about" class="max-w-5xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-3 gap-8 items-center">
         <div class="md:col-span-2">
             <span class="text-xs uppercase tracking-wider font-bold text-[#C87A65] px-3 py-1 rounded-full bg-[#FFF0ED] border-2 border-[#F5E6E3] inline-block mb-4">✨ Tech is Fun!</span>
@@ -84,7 +87,7 @@
                 <a href="#contact" class="bg-white border-2 border-[#F5E6E3] text-[#4A3728] font-bold px-6 py-3 rounded-2xl hover:bg-[#FFF0ED] transition text-sm">Say Hello! 👋</a>
             </div>
         </div>
-        <div class="bg-white border-2 border-[#F5E6E3] rounded-3xl p-6 shadow-xl shadow-[#F5E6E3]/50 relative overflow-hidden">
+        <div class="bg-white border-2 border-[#F5E6E3] rounded-3xl p-6 shadow-xl shadow-[#F5E6E3]/40 relative overflow-hidden">
             <div class="absolute -top-4 -right-4 w-12 h-12 bg-[#FDF2D5] rounded-full opacity-60"></div>
             <h3 class="font-display font-bold text-[#C87A65] mb-4 flex items-center gap-2 text-base">🎨 My Toolbox</h3>
             <div class="flex flex-wrap gap-2 text-xs">
