@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soumiya M. | Cyber & Software Developer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+        
+        // Foolproof Front-End Data Filtering Logic
+        function filterProjects(category, buttonElement) {
+            const items = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.tab-btn');
+            
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-emerald-500/20', 'text-emerald-400', 'border-emerald-500/30');
+                btn.classList.add('text-slate-400', 'border-slate-800');
+            });
+            
+            if (buttonElement) {
+                buttonElement.classList.remove('text-slate-400', 'border-slate-800');
+                buttonElement.classList.add('bg-emerald-500/20', 'text-emerald-400', 'border-emerald-500/30');
+            }
+            
+            items.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (category === 'all' || itemCategory === category) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0B0F19; color: #E2E8F0; }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="antialiased selection:bg-emerald-500/30 selection:text-emerald-200">
+
+    <!-- Header Navigation -->
+    <header class="border-b border-slate-900 sticky top-0 bg-[#0B0F19]/80 backdrop-blur-md z-50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-display font-bold text-lg tracking-tight text-white">soumiya<span class="text-emerald-400">.dev</span></a>
+            <nav class="flex space-x-6 text-sm font-medium text-slate-400">
+                <a href="#about" class="hover:text-emerald-400 transition">About</a>
+                <a href="#projects" class="hover:text-emerald-400 transition">Projects</a>
+                <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero / Intro Section -->
+    <section id="about" class="max-w-5xl mx-auto px-6 py-20 md:py-32 grid md:grid-cols-3 gap-12 items-center">
+        <div class="md:col-span-2">
+            <span class="text-xs uppercase tracking-widest font-bold text-emerald-400 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 inline-block mb-4">Cybersecurity Analyst & Developer</span>
+            <h1 class="font-display text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
+                Securing digital assets. Building intelligent systems.
+            </h1>
+            <p class="text-slate-400 text-base md:text-lg max-w-xl leading-relaxed mb-8">
+                Hi, I'm Soumiya. I specialize in real-time threat analysis, secure software development, and teaching technical architectures. I bridge the gap between building software and hardening defenses.
+            </p>
+            <div class="flex space-x-4">
+                <a href="#projects" class="bg-emerald-500 text-slate-950 font-semibold px-6 py-3 rounded-lg hover:bg-emerald-400 transition text-sm">View Work</a>
+                <a href="#contact" class="border border-slate-800 text-slate-300 font-medium px-6 py-3 rounded-lg hover:bg-slate-900 transition text-sm">Let's Connect</a>
+            </div>
+        </div>
+        <div class="hidden md:block bg-slate-900/50 border border-slate-800 rounded-2xl p-6 shadow-xl">
+            <h3 class="font-display font-bold text-white mb-4 flex items-center gap-2 text-sm"><i class="fa-solid fa-code text-emerald-400"></i> Core Stack</h3>
+            <div class="flex flex-wrap gap-2 text-xs">
+                <span class="bg-slate-950 px-2.5 py-1.5 rounded border border-slate-800 text-slate-300">Python</span>
+                <span class="bg-slate-950 px-2.5 py-1.5 rounded border border-slate-800 text-slate-300">JavaScript</span>
+                <span class="bg-slate-950 px-2.5 py-1.5 rounded border border-slate-800 text-slate-300">SIEM Monitoring</span>
+                <span class="bg-slate-950 px-2.5 py-1.5 rounded border border-slate-800 text-slate-300">Tailwind CSS</span>
+                <span class="bg-slate-950 px-2.5 py-1.5 rounded border border-slate-800 text-slate-300">MongoDB</span>
+                <span class="bg-slate-950 px-2.5 py-1.5 rounded border border-slate-800 text-slate-300">MITRE ATT&CK</span>
+            </div>
+        </div>
+    </section>
+    <!-- Interactive Projects Section -->
+    <section id="projects" class="border-t border-slate-900 bg-slate-950/40 py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <h2 class="font-display text-3xl font-bold text-white mb-2">Curated Projects</h2>
+                    <p class="text-slate-400 text-sm">Select a pill to filter my work across different engineering disciplines.</p>
+                </div>
+                <div class="flex flex-wrap gap-2 text-xs">
+                    <button onclick="filterProjects('all', this)" class="tab-btn px-4 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/20 text-emerald-400 font-medium transition">All Work</button>
+                    <button onclick="filterProjects('cyber', this)" class="tab-btn px-4 py-2 rounded-full border border-slate-800 text-slate-400 font-medium transition hover:border-slate-700">Cybersecurity</button>
+                    <button onclick="filterProjects('software', this)" class="tab-btn px-4 py-2 rounded-full border border-slate-800 text-slate-400 font-medium transition hover:border-slate-700">Software & AI</button>
+                </div>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Project 1 -->
+                <div class="project-card bg-slate-900/30 border border-slate-900 rounded-xl p-6 hover:border-slate-800 transition flex flex-col justify-between" data-category="software">
+                    <div>
+                        <div class="flex items-center justify-between text-xs mb-4">
+                            <span class="text-emerald-400 font-semibold uppercase tracking-wider"><i class="fa-solid fa-robot mr-1"></i> AI & Software</span>
+                            <span class="text-slate-500">Final Year Project</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-2">AI Cyberbully Detection System</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">Built an AI system executing NLP to block harmful messages in real-time and alert trusted contacts.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 text-[11px] text-slate-400">
+                        <span class="bg-slate-900 px-2 py-0.5 rounded">Python</span>
+                        <span class="bg-slate-900 px-2 py-0.5 rounded">NLP</span>
+                        <span class="bg-slate-900 px-2 py-0.5 rounded">MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-slate-900/30 border border-slate-900 rounded-xl p-6 hover:border-slate-800 transition flex flex-col justify-between" data-category="cyber">
+                    <div>
+                        <div class="flex items-center justify-between text-xs mb-4">
+                            <span class="text-emerald-400 font-semibold uppercase tracking-wider"><i class="fa-solid fa-shield-halved mr-1"></i> Cybersecurity</span>
+                            <span class="text-slate-500">Secure Engineering</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-2">SnapSecure Web Application</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">Developed a secure mockup social app focused on input validation, hashed authentication, and session safety.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 text-[11px] text-slate-400">
+                        <span class="bg-slate-900 px-2 py-0.5 rounded">Secure Coding</span>
+                        <span class="bg-slate-900 px-2 py-0.5 rounded">Validation</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-slate-900/30 border border-slate-900 rounded-xl p-6 hover:border-slate-800 transition flex flex-col justify-between" data-category="cyber">
+                    <div>
+                        <div class="flex items-center justify-between text-xs mb-4">
+                            <span class="text-emerald-400 font-semibold uppercase tracking-wider"><i class="fa-solid fa-bug mr-1"></i> Cybersecurity</span>
+                            <span class="text-slate-500">Incident Simulation</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-2">MOVEit Data Breach Simulation</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">Simulated ransomware access, exfiltration, and encryption paths mapped directly to MITRE ATT&CK.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 text-[11px] text-slate-400">
+                        <span class="bg-slate-900 px-2 py-0.5 rounded">MITRE ATT&CK</span>
+                        <span class="bg-slate-900 px-2 py-0.5 rounded">Log Analysis</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-slate-900/30 border border-slate-900 rounded-xl p-6 hover:border-slate-800 transition flex flex-col justify-between" data-category="software">
+                    <div>
+                        <div class="flex items-center justify-between text-xs mb-4">
+                            <span class="text-emerald-400 font-semibold uppercase tracking-wider"><i class="fa-solid fa-window-maximize mr-1"></i> Front-End</span>
+                            <span class="text-slate-500">Practice Page</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-2">The Cozy Petal Landing Page</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">A responsive boutique florist website prototype demonstrating custom Tailwind color rules and UI grids.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 text-[11px] text-slate-400">
+                        <span class="bg-slate-900 px-2 py-0.5 rounded">HTML5</span>
+                        <span class="bg-slate-900 px-2 py-0.5 rounded">Tailwind CSS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="max-w-3xl mx-auto px-6 py-20">
+        <h2 class="font-display text-2xl font-bold text-white mb-8 flex items-center gap-2"><i class="fa-solid fa-briefcase text-emerald-400"></i> Track Record</h2>
+        <div class="space-y-8 border-l-2 border-slate-900 pl-6 ml-2">
+            <div class="relative">
+                <div class="absolute w-3 h-3 bg-emerald-400 rounded-full -left-[31px] top-1.5 border-4 border-[#0B0F19]"></div>
+                <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
+                    <h4 class="font-bold text-white text-base">Cybersecurity Analyst</h4>
+                    <span class="text-xs text-emerald-400 font-medium">Oct 2025 - Present</span>
+                </div>
+                <p class="text-xs text-slate-400 font-medium mb-2">ONESECURE Asia Pte Ltd</p>
+                <p class="text-xs text-slate-400 leading-relaxed">Handling real-time incident triage and structural log investigations for active DDoS and web vulnerabilities.</p>
+            </div>
+            <div class="relative">
+                <div class="absolute w-3 h-3 bg-slate-700 rounded-full -left-[31px] top-1.5 border-4 border-[#0B0F19]"></div>
+                <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
+                    <h4 class="font-bold text-white text-base">Computer Science Teaching Fellow</h4>
+                    <span class="text-xs text-slate-500 font-medium">Jun 2023 - Oct 2025</span>
+                </div>
+                <p class="text-xs text-slate-400 font-medium mb-2">Telebort Sdn. Bhd.</p>
+                <p class="text-xs text-slate-400 leading-relaxed">Mentored university and school students in Python script logic, data structures, and web development.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Details -->
+    <section id="contact" class="border-t border-slate-900 max-w-5xl mx-auto px-6 py-20 text-center">
+        <div class="max-w-md mx-auto">
+            <h2 class="font-display text-3xl font-bold text-white mb-3">Let's build something secure.</h2>
+            <p class="text-slate-400 text-sm mb-6">Open to engineering collaborations or technical discussions.</p>
+            <a href="mailto:soumiyachelvan@gmail.com" class="inline-flex items-center gap-2 bg-slate-900 border border-slate-800 text-white font-medium px-6 py-3 rounded-xl hover:bg-slate-800 transition text-sm">
+                <i class="fa-regular fa-envelope text-emerald-400"></i> soumiyachelvan@gmail.com
+            </a>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-950 py-8 text-center text-xs text-slate-600">
+        <p>&copy; 2026 Soumiya Marichelvan. Built cleanly using utility-first components.</p>
+    </footer>
+
+</body>
+</html>
